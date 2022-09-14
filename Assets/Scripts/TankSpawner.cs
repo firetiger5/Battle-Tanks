@@ -6,17 +6,23 @@ public class TankSpawner : MonoBehaviour
 {
     ///Variable Declaration/Implementation
     //Public
-    public GameObject TankPrefab;
+    public TankView tankView;
 
     // Start is called before the first frame update
     void Start()
     {
-        Instantiate(TankPrefab, transform.position, Quaternion.identity); //Spawns the tank prefab at this objects position and rotation
+        CreateTank();
     }
 
-    // Update is called once per frame
-    /*void Update()
+    /// <summary>
+    /// CreateTank Function - Function to create the tank prefab that can be called by other scripts
+    /// </summary>
+    private void CreateTank()
     {
-        
-    }*/
+        //Set Tank Model component
+        TankModel tankModel = new TankModel();
+
+        //Set Tank Controller component
+        TankController tankController = new TankController(tankModel, tankView);
+    }
 }
