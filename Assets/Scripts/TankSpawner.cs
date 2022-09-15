@@ -20,7 +20,7 @@ public class TankSpawner : MonoBehaviour
     private void CreateTank()
     {
         //Set Tank Model component
-        TankModel tankModel = new TankModel();
+        TankModel tankModel = new TankModel(30, 20);
 
         //Set Tank Controller component
         TankController tankController = new TankController(tankModel, tankView);
