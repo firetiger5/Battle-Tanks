@@ -335,6 +335,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 3198577602204476338}
+  TankMeshes:
+  - {fileID: 503139038527654588}
+  - {fileID: 503139038527654586}
+  - {fileID: 503139038527654580}
+  - {fileID: 503139038527654590}
 --- !u!54 &3198577602204476338
 Rigidbody:
   m_ObjectHideFlags: 0

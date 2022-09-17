@@ -7,6 +7,7 @@ public class TankView : MonoBehaviour
     ///Variable Implementation/Declaration
     //Public
     public Rigidbody rb; //Rigibody Reference
+    public MeshRenderer[] TankMeshes;
 
     //Private
     private TankController tankController; //Tank Controller Script Reference
@@ -65,5 +66,17 @@ public class TankView : MonoBehaviour
     public Rigidbody GetRigidbody()
     {
         return rb;
+    }
+
+    /// <summary>
+    /// ChangeColor - Function to change the color of the tank based on tank type
+    /// </summary>
+    public void ChangeColor(Material color)
+    {
+        //For-loop to go through all the Mesh Renderers and change the colors
+        for(int i = 0; i < TankMeshes.Length; i++)
+        {
+            TankMeshes[i].material = color;
+        }
     }
 }

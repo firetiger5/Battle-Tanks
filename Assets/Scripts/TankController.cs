@@ -24,6 +24,9 @@ public class TankController
         //Set the Tank Model and Tank View Tank Controller references
         tankModel.SetTankController(this);
         tankView.SetTankController(this);
+
+        //Change the color of the tank
+        tankView.ChangeColor(tankModel.color);
     }
 
 
