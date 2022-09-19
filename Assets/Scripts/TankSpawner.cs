@@ -11,7 +11,7 @@ public class TankSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CreateTank();
+
     }
 
     /// <summary>
@@ -34,12 +34,34 @@ public class TankSpawner : MonoBehaviour
     /// <summary>
     /// CreateTank Function - Function to create the tank prefab that can be called by other scripts
     /// </summary>
-    private void CreateTank()
+    public void CreateTank(TankTypes tankTypes)
     {
-        //Set Tank Model component
-        TankModel tankModel = new TankModel(tankList[0].movementSpeed, tankList[0].rotationSpeed, tankList[0].tankTypes, tankList[0].color);
+        //If-Else statements to spawn in the correct tank
+        if (tankTypes == TankTypes.BlueTank)
+        {
+            //Set Tank Model component
+            TankModel tankModel = new TankModel(tankList[1].movementSpeed, tankList[1].rotationSpeed, tankList[1].tankTypes, tankList[1].color);
 
-        //Set Tank Controller component
-        TankController tankController = new TankController(tankModel, tankView);
+            //Set Tank Controller component
+            TankController tankController = new TankController(tankModel, tankView);
+        }
+
+        else if (tankTypes == TankTypes.GreenTank)
+        {
+            //Set Tank Model component
+            TankModel tankModel = new TankModel(tankList[0].movementSpeed, tankList[0].rotationSpeed, tankList[0].tankTypes, tankList[0].color);
+
+            //Set Tank Controller component
+            TankController tankController = new TankController(tankModel, tankView);
+        }
+
+        else
+        {
+            //Set Tank Model component
+            TankModel tankModel = new TankModel(tankList[2].movementSpeed, tankList[2].rotationSpeed, tankList[2].tankTypes, tankList[2].color);
+
+            //Set Tank Controller component
+            TankController tankController = new TankController(tankModel, tankView);
+        }
     }
 }
